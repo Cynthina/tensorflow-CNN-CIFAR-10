@@ -40,6 +40,11 @@ from dataset import one_hot_encoded
 
 ########################################################################
 
+
+# In task 0:
+cluster = tf.train.ClusterSpec({"worker": ["202.119.194.93:2222"], "ps": ["202.119.194.93:2223"]})
+server = tf.train.Server(cluster, job_name="worker", task_index=0)
+
 # Directory where you want to download and save the data-set.
 # Set this before you start calling any of the functions below.
 data_path = "data/CIFAR-10/"
